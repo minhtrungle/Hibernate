@@ -17,6 +17,9 @@ public class ConfigHibernate {
     static {
         Configuration configuration = new Configuration();
 
+//        // Config theo file xml và thay thế cho ở dưới
+//        configuration.configure("hibernate.cfg.xml");
+
         // Cấu hình các properties
         Properties properties = new Properties();
         // "Dialect” để biết được loại database nào đang được sử dụng
