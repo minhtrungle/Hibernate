@@ -2,9 +2,12 @@ package com.lmtrung.hibernate;
 
 import com.lmtrung.hibernate.config.ConfigHibernate;
 import com.lmtrung.hibernate.pojo.Category;
+import com.lmtrung.hibernate.pojo.Product;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
+import org.springframework.security.core.parameters.P;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class HibernateTest {
@@ -35,10 +38,20 @@ public class HibernateTest {
 //        session.getTransaction().commit();
 
         // Lấy tất cả các danh mục
-        Query query = session.createQuery("FROM Category"); //HQL chỉ truy vấn trên lớp Category.java
-        // Trả về 1 list
-        List<Category> list = query.getResultList();
-        list.stream().forEach(category -> System.out.printf("%d - %s", category.getId(), category.getName()));
+//        Query query = session.createQuery("FROM Category"); //HQL chỉ truy vấn trên lớp Category.java
+//        // Trả về 1 list
+//        List<Category> list = query.getResultList();
+//        list.stream().forEach(category -> System.out.printf("%d - %s", category.getId(), category.getName()));
+
+        Product p = new Product();
+        p.setName("Ipad Pro");
+        p.setPrice(new BigDecimal(22000000));
+
+        // Lấy category ở dòng 2
+        Category c = session.get(Category.class, 2);
+        p.setCategory(c);
+
+        session.save(p);
 
         session.close();
     }
