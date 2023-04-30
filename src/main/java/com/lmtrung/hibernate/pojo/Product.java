@@ -1,9 +1,11 @@
 package com.lmtrung.hibernate.pojo;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -24,10 +26,27 @@ public class Product implements Serializable {
     // Liên kết khóa ngoại, nhiều sản phẩm thuộc 1 mục
     // Không khai báo sẽ lấy tham số cực đỉnh, tham số quan trọng là: fetch (Mỗi lần lấy product sẽ tự động lấy category cho dù có sử dụng hay không)
     // Nếu FetchType.LAZY khi lấy product sẽ k lấy category khi nào đụng tới nó mới lấy
-    // Mặc định là EAGER
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "category_ìd")
+    // Mặc định là fetch = FetchType.EAGER
+    @ManyToOne()
+    @JoinColumn(name = "category_id")
     private Category category; // Khóa ngoại phải khai báo theo object
+
+    // Cấu hình ManyToMany
+    @ManyToMany
+    @JoinTable(
+            name = "pro_man", // Bảng trung gian
+            joinColumns = { @JoinColumn(name = "product_id") }, // column của bảng thứ nhất đang trỏ đến bảng trung gian trong bảng trung gian
+            inverseJoinColumns = { @JoinColumn(name = "manufacturer_id")} // column của bảng thứ hai đang trỏ đến bảng trung gian trong bảng trung gian
+    )
+    private Set<Manufacturer> manufacturers;
+
+    public Set<Manufacturer> getManufacturers() {
+        return manufacturers;
+    }
+
+    public void setManufacturers(Set<Manufacturer> manufacturers) {
+        this.manufacturers = manufacturers;
+    }
 
     public int getId() {
         return id;
