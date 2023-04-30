@@ -2,13 +2,16 @@ package com.lmtrung.hibernate;
 
 import com.lmtrung.hibernate.config.ConfigHibernate;
 import com.lmtrung.hibernate.pojo.Category;
+import com.lmtrung.hibernate.pojo.Manufacturer;
 import com.lmtrung.hibernate.pojo.Product;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.springframework.security.core.parameters.P;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class HibernateTest {
     public static void main(String[] args) {
@@ -43,15 +46,45 @@ public class HibernateTest {
 //        List<Category> list = query.getResultList();
 //        list.stream().forEach(category -> System.out.printf("%d - %s", category.getId(), category.getName()));
 
-        Product p = new Product();
-        p.setName("Ipad Pro");
-        p.setPrice(new BigDecimal(22000000));
+//        Product p = new Product();
+//        p.setName("Ipad Pro");
+//        p.setPrice(new BigDecimal(22000000));
+//
+//        // Lấy category ở dòng 2
+//        Category c = session.get(Category.class, 2);
+//        p.setCategory(c);
+//
+//        session.save(p);
 
-        // Lấy category ở dòng 2
-        Category c = session.get(Category.class, 2);
-        p.setCategory(c);
 
-        session.save(p);
+        // Lấy danh mục muốn tìm sản phẩm
+//        Category c = session.get(Category.class, 1);
+//        // 2 bảng đã liên kết với nhau sẽ lấy tất cả sản phẩm thuộc danh mục số 1
+//        c.getProducts().forEach(p -> System.out.printf("%d - %s", p.getId(), p.getName()));
+
+        // ManyToMany
+//        Product p = new Product();
+//        p.setName("New Tablet");
+//        p.setPrice(new BigDecimal(22222222));
+//
+//        Category c = session.get(Category.class, 2);
+//
+//        Set<Manufacturer> mans = new HashSet<>();
+//
+//        // Thêm 2 manufacturer
+//        mans.add(session.get(Manufacturer.class, 1));
+//        mans.add(session.get(Manufacturer.class, 2));
+//
+//        p.setManufacturers(mans);
+//
+//        // Do khi thực hiện thêm vào bảng product thì đông thời add vào bảng trung gian của product và manufacturer thì cần bật giao tác lên
+//        session.getTransaction().begin();
+//        session.save(p);
+//        session.getTransaction().commit();
+
+        // Cấu hình ManyToMany ngược lại bên Manufacturer
+        Manufacturer m = session.get(Manufacturer.class, 1);
+        m.getProducts().forEach(p -> System.out.printf("%d - %d", p.getId(), p.getName()));
 
         session.close();
     }
