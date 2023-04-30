@@ -2,6 +2,8 @@ package com.lmtrung.hibernate.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 // Các Persistent Class
 @Entity
@@ -21,6 +23,19 @@ public class Category implements Serializable {
 
     // @Column(name = "description")
     private String description;
+
+    // ManyToOne mặc định EAGER còn OneToMany mặc định LAZY
+    @OneToMany(mappedBy = "category") // Cấu hình ngược lại thì Thuộc tính Category khai báo bên Product liên lạc với mappedBy
+    private Set<Product> products; // 2 sản phẩm không thể trùng nhau thuộc cùng 1 danh sách category
+
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
 
     public Category() {
     }
