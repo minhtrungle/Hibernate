@@ -1,6 +1,7 @@
 package com.lmtrung.hibernate.config;
 
 import com.lmtrung.hibernate.pojo.Category;
+import com.lmtrung.hibernate.pojo.Manufacturer;
 import com.lmtrung.hibernate.pojo.Product;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -37,6 +38,7 @@ public class ConfigHibernate {
         // Cho đối tượng cấu hình biết có persistent class
         configuration.addAnnotatedClass(Category.class);
         configuration.addAnnotatedClass(Product.class);
+        configuration.addAnnotatedClass(Manufacturer.class);
 
         // registry cung cấp các thông tin cho factory để xây dựng factory
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
