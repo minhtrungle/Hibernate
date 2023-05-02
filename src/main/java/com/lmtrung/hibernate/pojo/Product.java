@@ -18,10 +18,12 @@ public class Product implements Serializable {
     private String description;
     private BigDecimal price;
     private String image;
+
     // Trên trùng column nên không cần khai báo
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE) // Lưu trữ ngày tháng
     private Date createDate;
+
     private boolean active;
     // Liên kết khóa ngoại, nhiều sản phẩm thuộc 1 mục
     // Không khai báo sẽ lấy tham số cực đỉnh, tham số quan trọng là: fetch (Mỗi lần lấy product sẽ tự động lấy category cho dù có sử dụng hay không)
