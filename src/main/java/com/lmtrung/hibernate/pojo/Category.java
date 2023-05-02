@@ -11,6 +11,7 @@ import java.util.Set;
 // Các POJO nên sử dụng Serializable có trách nhiệm khi ta gửi sữ liệu ra môi trường internet thì Serializable đồng bộ dữ liệu ra bên ngoài
 // còn khi trở về hệ thống thì thực hiện chuyển dữ liệu trên máy xử lý được
 public class Category implements Serializable {
+
     // Khóa chính
     // Các Column đc khai báo trùng tên trường trong csdl thì bỏ k cần thêm @Column
     @Id
