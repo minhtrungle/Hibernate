@@ -82,6 +82,7 @@ public class HibernateTest {
 //        session.save(p);
 //        session.getTransaction().commit();
 
+
         // Cấu hình ManyToMany ngược lại bên Manufacturer
         Manufacturer m = session.get(Manufacturer.class, 1);
         m.getProducts().forEach(p -> System.out.printf("%d - %d", p.getId(), p.getName()));
