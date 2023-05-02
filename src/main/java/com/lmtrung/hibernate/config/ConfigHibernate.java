@@ -45,7 +45,9 @@ public class ConfigHibernate {
         // Từ đối tượng configuration tạo FACTORY
         FACTORY = configuration.buildSessionFactory(registry);
     }
+
     public static SessionFactory getFACTORY() {
         return FACTORY;
     }
+
 }
