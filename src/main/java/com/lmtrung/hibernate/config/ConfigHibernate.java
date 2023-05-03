@@ -40,6 +40,7 @@ public class ConfigHibernate {
         configuration.addAnnotatedClass(Product.class);
         configuration.addAnnotatedClass(Manufacturer.class);
 
+
         // registry cung cấp các thông tin cho factory để xây dựng factory
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         // Từ đối tượng configuration tạo FACTORY

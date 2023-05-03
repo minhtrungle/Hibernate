@@ -77,6 +77,7 @@ public class HibernateTest {
 //
 //        p.setManufacturers(mans);
 //
+
 //        // Do khi thực hiện thêm vào bảng product thì đông thời add vào bảng trung gian của product và manufacturer thì cần bật giao tác lên
 //        session.getTransaction().begin();
 //        session.save(p);

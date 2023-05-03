@@ -29,7 +29,6 @@ public class Category implements Serializable {
     @OneToMany(mappedBy = "category") // Cấu hình ngược lại thì Thuộc tính Category khai báo bên Product liên lạc với mappedBy
     private Set<Product> products; // 2 sản phẩm không thể trùng nhau thuộc cùng 1 danh sách category
 
-
     public Set<Product> getProducts() {
         return products;
     }
