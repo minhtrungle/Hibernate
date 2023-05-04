@@ -33,7 +33,6 @@ public class Product implements Serializable {
     @JoinColumn(name = "category_id")
     private Category category; // Khóa ngoại phải khai báo theo object
 
-
     // Cấu hình ManyToMany
     @ManyToMany
     @JoinTable(
