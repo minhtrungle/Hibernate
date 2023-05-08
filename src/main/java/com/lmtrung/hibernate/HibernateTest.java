@@ -76,6 +76,7 @@ public class HibernateTest {
 //        mans.add(session.get(Manufacturer.class, 2));
 //
 
+
 //        p.setManufacturers(mans);
 //
 
