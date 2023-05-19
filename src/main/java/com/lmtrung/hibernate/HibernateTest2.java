@@ -38,6 +38,7 @@ public class HibernateTest2 {
         Query q4 = (Query) session.createQuery("UPDATE Category C SET C.name =: name WHERE C.id =: id");
         q4.setParameter("name", "Smart Watch");
 
+
         q4.setParameter("id", 30);
         // Update cần phải bật giao tác lên
         session.getTransaction().begin();

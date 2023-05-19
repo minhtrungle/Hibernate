@@ -161,6 +161,7 @@ public class HibernateTest {
         List<Object[]> result = q.getResultList();
         result.forEach(r -> {
 
+
             System.out.printf("%s - count: %d - Max: %.2f\n", r[0], r[1], r[2]);
         });
 
