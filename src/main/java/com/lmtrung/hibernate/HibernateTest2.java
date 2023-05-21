@@ -19,8 +19,6 @@ public class HibernateTest2 {
         // Lấy theo cụ thể một trường trong lớp đối tượng thì kết quả trả về danh sách mỗi kết quả là object array
         Query q1 = (Query) session.createQuery("SELECT P.id, P.name, P.price FROM Product P");
         List<Object[]> products1 = q1.getResultList();
-        products1.forEach(p -> System.out.printf("%d - %s - %.2f\n", p[0], p[1], p[2]));
-
         // Cú pháp P.id =: id sau đó mới truyền giá trị sử dụng bằng setParameter
         Query q2 = (Query) session.createQuery("SELECT P.id, P.name, P.price FROM Product P WHERE P.id =: id ORDER BY P.id DESC"); // tương tự sử dụng : với LIKE:
         q2.setParameter("id", 1);
