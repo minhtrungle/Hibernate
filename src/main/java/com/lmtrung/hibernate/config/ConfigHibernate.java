@@ -33,6 +33,7 @@ public class ConfigHibernate {
         // Thực thi câu truy vấn thì code java sẽ show sql
         properties.put(Environment.SHOW_SQL, "true");
 
+
         configuration.setProperties(properties);
         // Cho đối tượng cấu hình biết có persistent class
         configuration.addAnnotatedClass(Category.class);
