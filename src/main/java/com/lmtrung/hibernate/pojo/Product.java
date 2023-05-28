@@ -43,6 +43,7 @@ public class Product implements Serializable {
             inverseJoinColumns = { @JoinColumn(name = "manufacturer_id")} // column trong bảng trung gian trỏ đến khóa chính bảng thứ hai
     )
 
+
     private Set<Manufacturer> manufacturers;
 
     public Set<Manufacturer> getManufacturers() {
