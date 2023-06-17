@@ -33,7 +33,8 @@ public class HibernateTest2 {
         results.forEach(obj -> System.out.printf("%s: Cound: %d; Max: %.2f; Min: %.2f \n", obj[0], obj[1], obj[2], obj[3]));
 
 
-        // ISERT, UPDATE, DELETE tương tự nhau
+        // I
+        // SERT, UPDATE, DELETE tương tự nhau
         Query q4 = (Query) session.createQuery("UPDATE Category C SET C.name =: name WHERE C.id =: id");
         q4.setParameter("name", "Smart Watch");
 
