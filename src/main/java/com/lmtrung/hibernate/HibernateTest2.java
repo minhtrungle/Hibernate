@@ -23,6 +23,7 @@ public class HibernateTest2 {
         Query q2 = (Query) session.createQuery("SELECT P.id, P.name, P.price FROM Product P WHERE P.id =: id ORDER BY P.id DESC"); // tương tự sử dụng : với LIKE:
         q2.setParameter("id", 1);
         List<Object[]> products2 = q2.getResultList();
+
         products2.forEach(p -> System.out.printf("%d - %s - %.2f\n", p[0], p[1], p[2]));
 
         // Thống kê thông tin sản phẩm
