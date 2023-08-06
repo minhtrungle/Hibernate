@@ -16,7 +16,6 @@ public class Manufacturer implements Serializable {
 
     private String country;
 
-
     // Khi cấu hình ngược lại chỉ cần mappedBy đến thuộc tính khai báo của Manufacturer bên Product
     @ManyToMany(mappedBy = "manufacturers")
     private Set<Product> products;
