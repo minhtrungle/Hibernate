@@ -151,6 +151,7 @@ public class HibernateTest {
                 builder.count(pRoot.get("id").as(Integer.class)),
                 builder.max(pRoot.get("price").as(BigDecimal.class)));
         // Gom nhóm
+
         query = query.groupBy(cRoot.get("name").as(String.class));
         // Sắp xếp tăng theo trường name
         query = query.orderBy(builder.asc(cRoot.get("name").as(String.class)));

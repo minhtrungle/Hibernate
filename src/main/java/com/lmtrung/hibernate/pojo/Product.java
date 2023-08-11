@@ -45,6 +45,7 @@ public class Product implements Serializable {
 
     private Set<Manufacturer> manufacturers;
 
+
     public Set<Manufacturer> getManufacturers() {
         return manufacturers;
     }
