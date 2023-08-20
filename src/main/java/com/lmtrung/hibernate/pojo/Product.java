@@ -37,11 +37,11 @@ public class Product implements Serializable {
 
     // Cấu hình ManyToMany
     @ManyToMany
-
-            name = "pro_man", // Bảng trung gian
-            joinColumns = { @JoinColumn(name = "product_id") }, // column trong bảng trung gian trỏ đến khóa chính bảng thứ nhất đang xét
-            inverseJoinColumns = { @JoinColumn(name = "manufacturer_id")} // column trong bảng trung gian trỏ đến khóa chính bảng thứ hai
-    )
+//    private
+//            name = "pro_man", // Bảng trung gian
+//            joinColumns = { @JoinColumn(name = "product_id") }, // column trong bảng trung gian trỏ đến khóa chính bảng thứ nhất đang xét
+//            inverseJoinColumns = { @JoinColumn(name = "manufacturer_id")} // column trong bảng trung gian trỏ đến khóa chính bảng thứ hai
+//    )
 
     private Set<Manufacturer> manufacturers;
 
