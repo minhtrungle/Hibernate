@@ -153,7 +153,6 @@ public class HibernateTest {
         // Gom nhóm
 
 
-        
         query = query.groupBy(cRoot.get("name").as(String.class));
         // Sắp xếp tăng theo trường name
         query = query.orderBy(builder.asc(cRoot.get("name").as(String.class)));
