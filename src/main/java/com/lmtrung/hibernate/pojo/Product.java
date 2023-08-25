@@ -38,6 +38,7 @@ public class Product implements Serializable {
     // Cấu hình ManyToMany
     @ManyToMany
 /
+
     private Set<Manufacturer> manufacturers;
 
 
