@@ -39,6 +39,7 @@ public class Product implements Serializable {
     @ManyToMany
 /
 
+
     private Set<Manufacturer> manufacturers;
 
 
