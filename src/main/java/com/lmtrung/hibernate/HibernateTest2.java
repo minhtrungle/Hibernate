@@ -31,7 +31,6 @@ public class HibernateTest2 {
 
 
 
-
         products2.forEach(p -> System.out.printf("%d - %s - %.2f\n", p[0], p[1], p[2]));
 
         // Thống kê thông tin sản phẩm
