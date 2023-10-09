@@ -39,6 +39,7 @@ public class ConfigHibernate {
 
 
 
+
         configuration.setProperties(properties);
         // Cho đối tượng cấu hình biết có persistent class
         configuration.addAnnotatedClass(Category.class);
